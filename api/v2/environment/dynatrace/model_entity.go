@@ -298,7 +298,7 @@ func (o *Entity) SetIcon(v EntityIcon) {
 // GetProperties returns the Properties field value if set, zero value otherwise.
 func (o *Entity) GetProperties() Property {
 	if o == nil || o.Properties == nil {
-		var ret map[string]map[string]interface{}
+		var ret Property
 		return ret
 	}
 	return *o.Properties
@@ -323,7 +323,7 @@ func (o *Entity) HasProperties() bool {
 }
 
 // SetProperties gets a reference to the given map[string]map[string]interface{} and assigns it to the Properties field.
-func (o *Entity) SetProperties(v Properties) {
+func (o *Entity) SetProperties(v Property) {
 	o.Properties = &v
 }
 
