@@ -30,11 +30,28 @@ type Entity struct {
 	FirstSeenTms *int64 `json:"firstSeenTms,omitempty"`
 	Icon *EntityIcon `json:"icon,omitempty"`
 	// A list of additional properties of the entity.
-	Properties *map[string]map[string]interface{} `json:"properties,omitempty"`
+	Properties        *Property              `json:"properties,omitempty"`
 	// The name of the entity, displayed in the UI.
 	DisplayName *string `json:"displayName,omitempty"`
 	// A set of tags assigned to the entity.
 	Tags *[]METag `json:"tags,omitempty"`
+}
+
+type Property struct {
+	SoftwareTechnologies	*[]SoftwareTechnology	`json:"softwareTechnologies,omitempty"`
+	Bitness					*string					`json:"bitness,omitempty"`
+	MetadataList			*[]Metadata				`json:"metadata,omitempty"`
+}
+
+type SoftwareTechnology struct {
+	PropertyType    *string `json:"type,omitempty"`
+	PropertyEdition *string `json:"edition,omitempty"`
+	PropertyVersion *string `json:"version,omitempty"`
+}
+
+type Metadata struct {
+	MetadataKey		*string	`json:"key,omitempty"`
+	MetadataValue	*string	`json:"value,omitempty"`
 }
 
 // NewEntity instantiates a new Entity object
