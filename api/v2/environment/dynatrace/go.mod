@@ -1,4 +1,4 @@
-module github.com/dynatrace-ace/dynatrace-go-api-client/api/v2/environment/dynatrace
+module github.com/jprelph/dynatrace-go-api-client/api/v2/environment/dynatrace
 
 go 1.13
 
